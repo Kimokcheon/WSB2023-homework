@@ -214,7 +214,7 @@ if __name__ == '__main__':
 
     # 初始化人脸检测器
     detector = cv.FaceDetectorYN.create(
-        model="./models/face_detection_yunet_2022mar.onnx",
+        model="models/face_detection_yunet_2022mar.onnx",
         config="",
         input_size=[w, h],  # [width, height]
         score_threshold=0.99,
@@ -258,14 +258,14 @@ if __name__ == '__main__':
     # 情绪字典
     emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
-    # # 加载面部和口罩识别模型
-    # prototxtPath = r"./models/deploy.prototxt"
-    # weightsPath = r"./models/res10_300x300_ssd_iter_140000.caffemodel"
-    # faceNet = cv.dnn.readNet(prototxtPath, weightsPath)
-    # maskNet = load_model("./models/mask_detector.model")
+    # 加载面部和口罩识别模型
+    prototxtPath = r"models/deploy.prototxt"
+    weightsPath = r"models/res10_300x300_ssd_iter_140000.caffemodel"
+    faceNet = cv.dnn.readNet(prototxtPath, weightsPath)
+    maskNet = load_model("models/mask_detector.model")
 
-    # # 开始视频流
-    # print("[INFO] starting video stream...")
+    # 开始视频流
+    print("[INFO] starting video stream...")
     # print("我们需要拍一张背景,请人离开一下")
     # getbackground()
     # print("正在初始化")
