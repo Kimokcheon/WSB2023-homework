@@ -1,5 +1,5 @@
 import cv2 as cv
-from emotion_recognizer import EmotionRecognizer
+from emotion_recognizer.emotion_recognizer import EmotionRecognizer
 
 def start_video_stream(device_id=0):
     ER = EmotionRecognizer('./models/model.h5', './models/haarcascade_frontalface_default.xml')
